@@ -10,6 +10,9 @@ fetch('https://www.moogleapi.com/api/v1/characters/search?origin=xii')
     const image = document.createElement('img');
     image.src = char.pictures[0].url
 
+    const imageContainer = document.createElement('div')
+    imageContainer.setAttribute('class', 'imageContainer')
+
     const name = document.createElement('h2');
     name.textContent = char.name;
 
@@ -20,7 +23,8 @@ fetch('https://www.moogleapi.com/api/v1/characters/search?origin=xii')
     description.textContent = char.description;
 
     container.appendChild(card)
-    card.appendChild(image)
+    card.appendChild(imageContainer)
+    imageContainer.appendChild(image)
     card.appendChild(name)
     card.appendChild(origin)
     card.appendChild(description)
